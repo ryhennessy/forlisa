@@ -7,7 +7,7 @@
       name: nginx
       state: present
   - name: Put the nginx configuration file in place
-    file:
+    copy:
       src: ./nginx.conf
       dest: /etc/nginx/nginx.conf
       mode: 0644
