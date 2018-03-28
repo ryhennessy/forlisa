@@ -8,7 +8,7 @@
       state: present
   - name: Put the nginx configuration file in place
     file:
-      src: nginx.conf
+      src: ./nginx.conf
       dest: /etc/nginx/nginx.conf
       mode: 0644
       owner: root
