@@ -6,6 +6,13 @@
     yum:
       name: nginx
       state: present
+  - name: Put the nginx configuration file in place
+    file:
+      src: nginx.conf
+      dest: /etc/nginx/nginx.conf
+      mode: 0644
+      owner: root
+      group: root
   - name: Make sure the nginx service is started and enabled
     service:
       name: nginx
