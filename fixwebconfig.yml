@@ -1,5 +1,5 @@
 - name: Sets up a web forward from S&D to blancinglisa.net
-  hosts: all
+  hosts: tag_for-lisa 
   become: yes
   tasks:
   - name: Make sure nginx is installed
