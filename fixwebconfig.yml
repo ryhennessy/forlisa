@@ -1,0 +1,13 @@
+- name: Sets up a web forward from S&D to blancinglisa.net
+  hosts: all
+  become: yes
+  tasks:
+  - name: Make sure nginx is installed
+    yum:
+      name: nginx
+      state: present
+  - name: Make sure the nginx service is started and enabled
+    service:
+      name: nginx
+      state: started
+      enabled: yes
