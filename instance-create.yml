@@ -1,0 +1,17 @@
+---
+- name: Create the instance in GCE
+  hosts: localhost
+  tasks:
+   - name: Create the GCE instance for web proxy/forwarder
+     gce:
+       instance_names: sanddwebsite
+       zone: us-central1-a
+       project: hennessy-openshift
+       tags:
+         - http-server
+         - https-server
+         - for-lisa
+       state: present
+       image_family: centos-7
+       disk_size: 20
+...
